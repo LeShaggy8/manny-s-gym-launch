@@ -1,7 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { MGLogo } from "@/components/MGLogo";
+import { Dumbbell, Footprints, Bike, Swords } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const SPECIALTIES = [
+  { label: "Área de Pesas", icon: Dumbbell },
+  { label: "Zona de Cardio", icon: Footprints },
+  { label: "Área de Boxeo", icon: Swords },
+  { label: "Zona de Spinning", icon: Bike },
+];
 
 const PHONE = "+524929210227";
 const PHONE_DISPLAY = "492 921 0227";
