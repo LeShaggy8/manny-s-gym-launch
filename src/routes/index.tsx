@@ -449,6 +449,27 @@ function Index() {
             </div>
           </div>
         </Reveal>
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          {REVIEWS.map((quote, i) => (
+            <Reveal key={i} delay={i * 90}>
+              <figure className="relative h-full border border-border bg-surface p-8 transition-colors hover:border-primary">
+                <span
+                  aria-hidden
+                  className="font-display text-6xl leading-none text-primary/40"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 text-muted-foreground">{quote}</blockquote>
+                <figcaption className="mt-6 flex items-center gap-2 border-t border-border pt-4 text-xs uppercase tracking-widest text-muted-foreground">
+                  <span className="text-primary">★★★★★</span>
+                  Reseña en Google
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+
+        </Reveal>
       </section>
 
       {/* UBICACION */}
