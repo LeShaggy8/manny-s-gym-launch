@@ -468,8 +468,6 @@ function Index() {
             </Reveal>
           ))}
         </div>
-
-        </Reveal>
       </section>
 
       {/* UBICACION */}
