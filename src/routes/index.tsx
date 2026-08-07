@@ -220,7 +220,7 @@ function Index() {
             Sobre <span className="text-primary">nosotros</span>
           </h2>
         </Reveal>
-        <div className="mt-10 grid gap-10 lg:grid-cols-2">
+        <div className="mt-10 max-w-3xl">
           <Reveal delay={80}>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Manny&apos;s Gym es un gimnasio de barrio con mentalidad de alto rendimiento. Llevamos
@@ -228,29 +228,31 @@ function Index() {
               temprano, mamás, competidores y personas que nunca habían pisado un gimnasio.
               <br />
               <br />
-              Abrimos a las 5:00 AM porque sabemos que la disciplina no espera. Tenemos el equipo,
-              el ambiente y la comunidad para que dejes de posponerlo.{" "}
+              Aquí no somos solo pesas y cardio: somos un espacio completo de entrenamiento, con
+              zonas dedicadas para fuerza, resistencia, boxeo y spinning. Abrimos a las 5:00 AM
+              porque sabemos que la disciplina no espera.{" "}
               <strong className="text-foreground">
                 Los límites solo existen si tú los pones.
               </strong>
             </p>
           </Reveal>
-          <Reveal delay={160}>
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["Área de pesas", "Peso libre, barras, mancuernas y racks para fuerza real."],
-                ["Cardio", "Caminadoras, elípticas y bicicletas para tu resistencia."],
-                ["Funcional", "Zona para entrenamiento funcional, movilidad y core."],
-                ["Comunidad", "Ambiente respetuoso donde todos empujan hacia adelante."],
-              ].map(([t, d]) => (
-                <li key={t} className="border-l-4 border-primary bg-surface p-5">
-                  <h3 className="font-display text-xl">{t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
         </div>
+
+        <Reveal delay={140}>
+          <h3 className="mt-12 font-display text-sm tracking-[0.35em] text-primary">
+            Lo que encontrarás aquí
+          </h3>
+        </Reveal>
+        <ul className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {SPECIALTIES.map((s, i) => (
+            <Reveal key={s.label} delay={180 + i * 70}>
+              <li className="group flex h-full flex-col items-center gap-3 border border-border bg-surface p-6 text-center transition-colors hover:border-primary">
+                <s.icon className="h-9 w-9 text-primary" strokeWidth={1.75} aria-hidden="true" />
+                <span className="font-display text-lg tracking-wide">{s.label}</span>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
       </section>
 
       {/* INSTALACIONES */}
