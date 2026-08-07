@@ -3,6 +3,8 @@ import { Reveal } from "@/components/Reveal";
 import { MGLogo } from "@/components/MGLogo";
 import { Dumbbell, Footprints, Bike, Swords } from "lucide-react";
 import { useEffect, useState } from "react";
+import cardioPhoto from "@/assets/cardio.jpg.asset.json";
+
 
 const SPECIALTIES = [
   { label: "Área de Pesas", icon: Dumbbell },
