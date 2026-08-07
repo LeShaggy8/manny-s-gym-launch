@@ -3,6 +3,8 @@ import { Reveal } from "@/components/Reveal";
 import { MGLogo } from "@/components/MGLogo";
 import { Dumbbell, Footprints, Bike, Swords } from "lucide-react";
 import { useEffect, useState } from "react";
+import cardioPhoto from "@/assets/cardio.jpg.asset.json";
+
 
 const SPECIALTIES = [
   { label: "Área de Pesas", icon: Dumbbell },
@@ -10,6 +12,22 @@ const SPECIALTIES = [
   { label: "Área de Boxeo", icon: Swords },
   { label: "Zona de Spinning", icon: Bike },
 ];
+
+const GALLERY: { label: string; src?: string }[] = [
+  { label: "Zona de cardio", src: cardioPhoto.url },
+  { label: "Área de pesas" },
+  { label: "Área de boxeo" },
+  { label: "Zona de spinning" },
+  { label: "Vista general del gimnasio" },
+  { label: "Recepción / entrada" },
+];
+
+const REVIEWS = [
+  "Uno de los mejores gimnasios de Zacatecas. Muy bien mantenido, limpio, con variedad de equipo, y siempre ponen buena música.",
+  "Excelentes instalaciones; un área amplia y limpia con buena variedad de equipo y buen suministro de barras, mancuernas y discos.",
+  "Un gran lugar para entrenar, con muy buen ambiente y un gimnasio muy bien equipado.",
+];
+
 
 const PHONE = "+524929210227";
 const PHONE_DISPLAY = "492 921 0227";
@@ -275,20 +293,36 @@ function Index() {
               espacio.
             </p>
           </Reveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "Área de pesas — peso libre y racks",
-              "Zona de cardio — caminadoras y elípticas",
-              "Área de boxeo — costales y guantes",
-              "Zona de spinning — bicicletas fijas",
-              "Mancuernas y bancos",
-              "Recepción / entrada",
-            ].map((label, i) => (
-              <Reveal key={label} delay={i * 60}>
-                <PhotoSlot label={label} className="aspect-[4/3] w-full" />
+          <div className="mt-10 grid auto-rows-[220px] gap-4 sm:grid-cols-2 sm:auto-rows-[240px] lg:grid-cols-3">
+            {GALLERY.map((item, i) => (
+              <Reveal
+                key={item.label}
+                delay={i * 60}
+                className={i === 0 ? "sm:col-span-2 sm:row-span-2" : ""}
+              >
+                {item.src ? (
+                  <figure className="group relative h-full w-full overflow-hidden border border-border bg-background">
+                    <img
+                      src={item.src}
+                      alt={`${item.label} en Manny's Gym, Guadalupe, Zacatecas`}
+                      loading="lazy"
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 sm:object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+                    <figcaption className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-4">
+                      <span className="h-4 w-1 bg-primary transition-all duration-300 group-hover:h-6" />
+                      <span className="font-display text-sm tracking-widest transition-colors group-hover:text-primary">
+                        {item.label}
+                      </span>
+                    </figcaption>
+                  </figure>
+                ) : (
+                  <PhotoSlot label={item.label} className="h-full w-full" />
+                )}
               </Reveal>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -415,6 +449,25 @@ function Index() {
             </div>
           </div>
         </Reveal>
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          {REVIEWS.map((quote, i) => (
+            <Reveal key={i} delay={i * 90}>
+              <figure className="relative h-full border border-border bg-surface p-8 transition-colors hover:border-primary">
+                <span
+                  aria-hidden
+                  className="font-display text-6xl leading-none text-primary/40"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 text-muted-foreground">{quote}</blockquote>
+                <figcaption className="mt-6 flex items-center gap-2 border-t border-border pt-4 text-xs uppercase tracking-widest text-muted-foreground">
+                  <span className="text-primary">★★★★★</span>
+                  Reseña en Google
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* UBICACION */}
