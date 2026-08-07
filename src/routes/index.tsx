@@ -11,6 +11,22 @@ const SPECIALTIES = [
   { label: "Zona de Spinning", icon: Bike },
 ];
 
+const GALLERY: { label: string; src?: string }[] = [
+  { label: "Zona de cardio", src: cardioPhoto.url },
+  { label: "Área de pesas" },
+  { label: "Área de boxeo" },
+  { label: "Zona de spinning" },
+  { label: "Vista general del gimnasio" },
+  { label: "Recepción / entrada" },
+];
+
+const REVIEWS = [
+  "Uno de los mejores gimnasios de Zacatecas. Muy bien mantenido, limpio, con variedad de equipo, y siempre ponen buena música.",
+  "Excelentes instalaciones; un área amplia y limpia con buena variedad de equipo y buen suministro de barras, mancuernas y discos.",
+  "Un gran lugar para entrenar, con muy buen ambiente y un gimnasio muy bien equipado.",
+];
+
+
 const PHONE = "+524929210227";
 const PHONE_DISPLAY = "492 921 0227";
 const WHATSAPP = `https://wa.me/524929210227?text=${encodeURIComponent(
