@@ -278,11 +278,11 @@ function Index() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               "Área de pesas — peso libre y racks",
-              "Zona de cardio — caminadoras y bicicletas",
-              "Zona funcional — colchonetas y accesorios",
+              "Zona de cardio — caminadoras y elípticas",
+              "Área de boxeo — costales y guantes",
+              "Zona de spinning — bicicletas fijas",
               "Mancuernas y bancos",
               "Recepción / entrada",
-              "Ambiente en clase u hora pico",
             ].map((label, i) => (
               <Reveal key={label} delay={i * 60}>
                 <PhotoSlot label={label} className="aspect-[4/3] w-full" />
