@@ -242,21 +242,17 @@ function Index() {
             </Reveal>
           </div>
           <Reveal delay={200}>
-            <figure className="relative aspect-[4/5] w-full overflow-hidden border border-border">
-              <img
-                src={pesasPhoto.url}
-                alt="Área de pesas y mancuernas en Manny's Gym, Guadalupe, Zacatecas"
-                className="h-full w-full object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            <div className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden border border-border bg-[radial-gradient(circle_at_50%_45%,oklch(0.2_0.06_27.5),oklch(0.09_0.005_250)_70%)]">
+              <div className="pointer-events-none absolute h-2/3 w-2/3 rounded-full bg-primary/25 blur-3xl" />
+              <div className="diag-stripes pointer-events-none absolute inset-x-0 bottom-0 h-3 opacity-70" />
               <img
                 src={logoAsset.url}
                 alt="Logo Manny's Gym"
-                className="pointer-events-none absolute right-3 top-3 h-14 w-14 rounded-sm bg-background/55 object-contain p-1 backdrop-blur-sm sm:h-16 sm:w-16"
+                className="relative w-[72%] max-w-sm animate-[fade-in_0.9s_ease-out_both] object-contain mix-blend-screen drop-shadow-[0_0_40px_oklch(0.56_0.235_27.5_/_0.45)]"
               />
-
-            </figure>
+            </div>
           </Reveal>
+
 
         </div>
         <div className="diag-stripes h-3 w-full opacity-90" />
