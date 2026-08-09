@@ -4,6 +4,12 @@ import { MGLogo } from "@/components/MGLogo";
 import { Dumbbell, Footprints, Bike, Swords } from "lucide-react";
 import { useEffect, useState } from "react";
 import cardioPhoto from "@/assets/cardio.jpg.asset.json";
+import logoAsset from "@/assets/logo.jpg.asset.json";
+import pesasPhoto from "@/assets/pesas.jpg.asset.json";
+import maquinasPhoto from "@/assets/maquinas.jpg.asset.json";
+import funcionalPhoto from "@/assets/funcional.jpg.asset.json";
+import generalPhoto from "@/assets/general.jpg.asset.json";
+import plantaAltaPhoto from "@/assets/planta-alta.jpg.asset.json";
 
 
 const SPECIALTIES = [
@@ -14,13 +20,14 @@ const SPECIALTIES = [
 ];
 
 const GALLERY: { label: string; src?: string }[] = [
+  { label: "Área de pesas", src: pesasPhoto.url },
   { label: "Zona de cardio", src: cardioPhoto.url },
-  { label: "Área de pesas" },
-  { label: "Área de boxeo" },
-  { label: "Zona de spinning" },
-  { label: "Vista general del gimnasio" },
-  { label: "Recepción / entrada" },
+  { label: "Área de máquinas y recepción", src: maquinasPhoto.url },
+  { label: "Zona de poleas y funcional", src: funcionalPhoto.url },
+  { label: "Vista general del gimnasio", src: generalPhoto.url },
+  { label: "Planta alta y escaleras", src: plantaAltaPhoto.url },
 ];
+
 
 const REVIEWS = [
   "Uno de los mejores gimnasios de Zacatecas. Muy bien mantenido, limpio, con variedad de equipo, y siempre ponen buena música.",
@@ -107,11 +114,16 @@ function Index() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6">
           <a href="#top" className="flex min-w-0 items-center gap-3">
-            <MGLogo className="h-9 w-9 shrink-0 text-primary" />
+            <img
+              src={logoAsset.url}
+              alt="Logo Manny's Gym"
+              className="h-11 w-11 shrink-0 object-contain"
+            />
             <span className="truncate font-display text-xl leading-none tracking-wide">
               Manny&apos;s <span className="text-primary">Gym</span>
             </span>
           </a>
+
           <nav className="hidden items-center gap-6 lg:flex">
             {NAV.map((n) => (
               <a
@@ -230,11 +242,16 @@ function Index() {
             </Reveal>
           </div>
           <Reveal delay={200}>
-            <PhotoSlot
-              label="Foto real del gimnasio (interior, alto contraste)"
-              className="aspect-[4/5] w-full"
-            />
+            <figure className="relative aspect-[4/5] w-full overflow-hidden border border-border">
+              <img
+                src={pesasPhoto.url}
+                alt="Área de pesas y mancuernas en Manny's Gym, Guadalupe, Zacatecas"
+                className="h-full w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            </figure>
           </Reveal>
+
         </div>
         <div className="diag-stripes h-3 w-full opacity-90" />
       </section>
