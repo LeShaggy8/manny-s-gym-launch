@@ -556,7 +556,12 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-              <MGLogo className="h-10 w-10 shrink-0 text-primary" />
+              <img
+                src={logoAsset.url}
+                alt="Logo Manny's Gym"
+                className="h-12 w-12 shrink-0 object-contain"
+              />
+
               <span className="font-display text-2xl leading-none">
                 Manny&apos;s <span className="text-primary">Gym</span>
               </span>
