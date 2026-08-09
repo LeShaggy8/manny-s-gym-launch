@@ -249,6 +249,12 @@ function Index() {
                 className="h-full w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <img
+                src={logoAsset.url}
+                alt="Logo Manny's Gym"
+                className="pointer-events-none absolute right-3 top-3 h-14 w-14 rounded-sm bg-background/55 object-contain p-1 backdrop-blur-sm sm:h-16 sm:w-16"
+              />
+
             </figure>
           </Reveal>
 
