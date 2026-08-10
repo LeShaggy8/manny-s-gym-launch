@@ -77,14 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Manny's Gym | Guadalupe, Zacatecas" },
+      {
+        name: "description",
+        content:
+          "Manny's Gym en Guadalupe, Zacatecas. Pesas, cardio, boxeo y spinning. Tu mejor versión, tu mejor lugar. Membresías desde $550 MXN/mes.",
+      },
+      { name: "author", content: "Manny's Gym" },
+      { property: "og:title", content: "Manny's Gym | Guadalupe, Zacatecas" },
+      {
+        property: "og:description",
+        content:
+          "Pesas, cardio, boxeo y spinning en Guadalupe, Zacatecas. Únete hoy y transforma tu vida.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/logo.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>

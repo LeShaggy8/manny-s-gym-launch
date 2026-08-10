@@ -3,14 +3,16 @@ import { Reveal } from "@/components/Reveal";
 import { MGLogo } from "@/components/MGLogo";
 import { Dumbbell, Footprints, Bike, Swords } from "lucide-react";
 import { useEffect, useState } from "react";
-import cardioPhoto from "@/assets/cardio.jpg.asset.json";
-import logoAsset from "@/assets/logo.jpg.asset.json";
-import pesasPhoto from "@/assets/pesas.jpg.asset.json";
-import maquinasPhoto from "@/assets/maquinas.jpg.asset.json";
-import funcionalPhoto from "@/assets/funcional.jpg.asset.json";
-import generalPhoto from "@/assets/general.jpg.asset.json";
-import plantaAltaPhoto from "@/assets/planta-alta.jpg.asset.json";
 
+// Imágenes reales servidas desde /public — independientes de Lovable,
+// funcionan tanto en el editor de Lovable como en despliegues externos (Vercel).
+const logoAsset = { url: "/logo.jpg" };
+const pesasPhoto = { url: "/pesas.jpg" };
+const cardioPhoto = { url: "/cardio.jpg" };
+const maquinasPhoto = { url: "/maquinas.jpg" };
+const funcionalPhoto = { url: "/funcional.jpg" };
+const generalPhoto = { url: "/general.jpg" };
+const plantaAltaPhoto = { url: "/planta-alta.jpg" };
 
 const SPECIALTIES = [
   { label: "Área de Pesas", icon: Dumbbell },

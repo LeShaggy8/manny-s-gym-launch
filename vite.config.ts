@@ -12,4 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Fuera del sandbox de Lovable (p. ej. build en Vercel), el wrapper de Lovable
+  // usa "cloudflare-module" como defaultPreset si Nitro no autodetecta el proveedor.
+  // Forzamos "vercel" explícitamente para un build confiable en Vercel.
+  // Dentro del sandbox de Lovable esta opción se ignora (siempre usa cloudflare-module ahí).
+  nitro: {
+    preset: "vercel",
+  },
 });
