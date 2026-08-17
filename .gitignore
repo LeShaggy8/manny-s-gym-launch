@@ -31,5 +31,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Vercel build output (generated, not committed)
+# Nitro build output (generated, not committed)
+.output
 .vercel
